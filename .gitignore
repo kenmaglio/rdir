@@ -1,0 +1,7 @@
+## Ignore Visual Studio Code temporary files
+
+# cache/options directory
+.vscode/
+
+# pkg
+pkg/
