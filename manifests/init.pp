@@ -3,6 +3,7 @@
 #
 class toolbox {
 
-  toolbox::mkdirs { 'C:/mytest/directory' }
-
+  toolbox::mkdirs {'MyDirs':
+    path => 'C:/mytest/directory',
+  }
 }
