@@ -1,15 +1,12 @@
 {
   "name": "kenmaglio-toolbox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Ken Maglio",
   "summary": "Toolbox/Utility Defined Types",
   "license": "MIT",
   "source": "http://github.com/kenmaglio/toolbox",
   "project_page": "https://github.com/kenmaglio/toolbox",
   "issues_url": "https://github.com/kenmaglio/toolbox/issues",
-  "requirements": [
-    {"name":"puppet","version_requirement":">= 4.5.0"}
-  ],
   "dependencies": [
   ],
   "operatingsystem_support": [
