@@ -3,9 +3,14 @@
 #
 define toolbox::mkdirs (
   $path,
-  $ensure = present,
+  $ensure = directory,
   $spliton = '/',
 ) {
+
+  if (!$path) {
+    fail('path must be provided')
+  }
+
   # split and define first element as drive
   $folders = split($path, $spliton)
   $drive = $folders[0] #should be empty string for linux; windows eg. C:
