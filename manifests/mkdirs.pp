@@ -2,7 +2,7 @@
 #
 #
 define toolbox::mkdirs (
-  $path,
+  $path = $title,
   $ensure = directory,
   $spliton = '/',
 ) {
@@ -16,13 +16,12 @@ define toolbox::mkdirs (
   $drive = $folders[0] #should be empty string for linux; windows eg. C:
 
   $folders.each |$index, $folder| {
-    if($index>0) {
-      $calculated_folder = inline_template("<%= @folders[1, @index + 1].join('/') %>")
-      $full_path = "${drive}/${calculated_folder}"
-      if (! defined(File[$full_path]) and $full_path != $drive) {
-        file { $full_path :
-          ensure => $ensure,
-        }
+    $calculated_folder = inline_template("<%= @folders[1, @index + 1].join('/') %>")
+    $full_path = "${drive}/${calculated_folder}"
+    #handle not ensuring File on C:
+    if (! defined(File[$full_path]) and $full_path != $drive) {
+      file { $full_path :
+        ensure => $ensure,
       }
     }
   }

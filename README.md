@@ -11,3 +11,12 @@ However, these are very reusable and could be used by anyone.
   * Windows / Linux Support
   * e.g. C:/Program Files/WinSW  will ensure Program Files, WinSW both exist (but not C:)
   * e.g. /opt/myapplication will ensure  opt, myapplication exist
+
+  Defined Type Usage
+  <pre><code>
+  toolbox::mkdirs { 'C:/temp/myapplication': }
+
+  toolbox::mkdirs { 'My Dir':
+    path => "C:/${$somevar}"
+  }
+  </code></pre>
