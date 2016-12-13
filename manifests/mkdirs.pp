@@ -2,7 +2,7 @@
 #
 #
 define toolbox::mkdirs (
-  $path,
+  $path = $title,
   $ensure = directory,
   $spliton = '/',
 ) {
